@@ -1,0 +1,24 @@
+<div class="dashboard-container">
+    <h2>
+        Welcome, User!
+    </h2>
+    
+    <div class="widget-container">
+        <div class="widget-header">         
+            <label class="header-text">Dashboard</label>
+        </div>
+    
+        <mat-card>
+            <div class="card-body">
+                <div class="card-text">
+                    <label class="notif-text">Total Users</label>
+                    <label class="notif-number">{{ userCount }}</label>
+                </div>
+                <div class="card-button">
+                    <button mat-raised-button (click)="ViewUsersList()"  color="primary">VIEW</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    
+</div>

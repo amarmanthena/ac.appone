@@ -1,0 +1,22 @@
+<h1 mat-dialog-title *ngIf="modalValues?.title">  
+    <mat-icon *ngIf="modalValues?.titleIcon">{{ modalValues.titleIcon }}</mat-icon> {{ modalValues.title }} 
+</h1>
+      
+<mat-dialog-content *ngIf="modalValues?.content">
+    <div [innerHtml]="modalValues.content"></div>
+</mat-dialog-content>
+      
+<mat-dialog-actions class="pull-right">      
+    <button mat-button mat-raised-button *ngIf="modalValues?.cancelButtonText" [mat-dialog-close]="modalValues?.cancelReturnValue" (click)="closeModal()">
+        {{ modalValues.cancelButtonText }}
+    </button>
+
+    <button mat-button mat-raised-button color="primary" *ngIf="modalValues?.confirmButtonText" [mat-dialog-close]="modalValues?.confirmReturnValue">
+        {{ modalValues.confirmButtonText }}
+    </button>
+
+    <button mat-button *ngIf="modalValues?.okButtonText" [mat-dialog-close]="modalValues?.okReturnValue">
+        {{ modalValues.okButtonText }}
+    </button>
+</mat-dialog-actions>
+      

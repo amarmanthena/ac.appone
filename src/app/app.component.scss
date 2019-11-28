@@ -1,0 +1,39 @@
+.core-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .core-toolbar {
+    .toggle-sidenav-container {
+      margin-right: 24px;
+    }
+  }
+  
+  .core-sidenav-container {
+    flex: 1;
+  }
+  
+  .core-sidenav-content {
+    z-index: unset;
+    height: 850px;
+  }
+  
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .toggle-sidenav-container {
+    padding-right: 22px;
+  }
+  

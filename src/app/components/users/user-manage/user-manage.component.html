@@ -1,0 +1,24 @@
+<div class="form-header">
+    <h2 class="form-header-text" mat-dialog-title>Add User</h2>
+    <mat-icon class="dialog-close-icon" (click)="closeModal()">close</mat-icon>
+</div>
+<div class="user-create-container">
+    <mat-dialog-content [formGroup]="userForm">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstName" matInput placeholder="First Name">
+            <mat-error *ngIf="validateField('firstName', 'required')">First Name is required</mat-error>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="outline">
+            <mat-label>Surname</mat-label>
+            <input formControlName="surname" matInput placeholder="Surname">
+            <mat-error *ngIf="validateField('surname', 'required')">Surname is required</mat-error>
+        </mat-form-field>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>      
+        <button class="spacer" (click)="saveUser(userForm.value)" [disabled]="!userForm.valid" mat-raised-button color="primary">Save</button>
+        <button mat-raised-button (click)="closeModal()">Close</button>
+    </mat-dialog-actions>
+</div>
