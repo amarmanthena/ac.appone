@@ -1,5 +1,5 @@
 # Getting started
-Make sure you have the [Angular CLI](https://github.com/angular/angular-cli) and [Node.js](https://nodejs.org/en/) installed. Version used during the development
+Make sure you have the [Angular CLI](https://cli.angular.io/) and [Node.js](https://nodejs.org/en/) installed. Version used during the development
 * Angular CLI: 8.3.19
 * Node: 10.15.3
 * OS: win32 x64

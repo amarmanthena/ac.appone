@@ -2,7 +2,6 @@ export interface IUserDto {
     id: number;
     firstName: string;
     surname: string;
-    usersdatumId: string;
 }
 
 export class UserDto implements IUserDto {
@@ -12,5 +11,4 @@ export class UserDto implements IUserDto {
       public id: number;
       public firstName: string;
       public surname: string;
-      public usersdatumId = 'api';
 }

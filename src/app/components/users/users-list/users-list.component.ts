@@ -66,9 +66,36 @@ export class UsersListComponent implements OnInit {
     const dialogRef = this.dialog.open(UserManageComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(data => {
       if (typeof data !== 'undefined') {
-        this.getUsers();
+        this.openConfirmationModal(data);
       }
     });
+  }
+
+  openConfirmationModal(user: UserDto) {
+    const modalValues: ModalModel = new ModalModel();
+
+    modalValues.titleIcon = 'check_circle';
+    modalValues.title = 'User Update';
+    modalValues.content = 'User ' + user.firstName + ' ' + user.surname + ' has been saved successfully!';
+    modalValues.confirmButtonText = 'OK';
+    modalValues.confirmReturnValue = 'Confirm';
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      modalValues
+    };
+    const dialogRef = this.dialog.open(AlertModalComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      data => {
+        if (data === 'Confirm') {
+          this.getUsers();
+        }
+      },
+      errorMessage => {
+        if (errorMessage.error && errorMessage.error.errors) {
+        }
+      }
+    );
   }
 
   deleteUserForm(user: UserDto) {
